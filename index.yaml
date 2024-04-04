@@ -1,0 +1,14 @@
+apiVersion: v1
+entries:
+  base-library-chart:
+  - apiVersion: v2
+    appVersion: 0.1.0
+    created: "2024-04-04T11:47:21.357149592Z"
+    description: A base library Helm chart for Kubernetes application
+    digest: c48e4adeaf3d40b81a213d7661dc830882b8944088b35c950ba616a9b06f5559
+    name: base-library-chart
+    type: library
+    urls:
+    - https://github.com/goodatlas/devops.helm.base-chart/releases/download/base-library-chart-0.1.2/base-library-chart-0.1.2.tgz
+    version: 0.1.2
+generated: "2024-04-04T11:47:21.35746476Z"
