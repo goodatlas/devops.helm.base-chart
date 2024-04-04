@@ -1,0 +1,13 @@
+{{- if .Values.podDisruptionBudget.enabled }}
+apiVersion: policy/v1
+kind: PodDisruptionBudget
+metadata:
+  name: {{ include "atlas-default-template.fullname" . }}-pdb
+  labels:
+    {{- include "atlas-default-template.labels" . | nindent 4 }}
+spec:
+  minAvailable: {{ .Values.podDisruptionBudget.minAvailable }}
+  selector:
+    matchLabels:
+      {{- include "atlas-default-template.selectorLabels" . | nindent 6 }}
+{{- end }}

@@ -1,0 +1,15 @@
+{{ if .Values.sharedVolume.enabled }}
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: {{ include "atlas-default-template.fullname" . }}-pvc-shared
+  annotations:
+    "helm.sh/resource-policy": keep
+spec:
+  accessModes:
+  - ReadWriteMany
+  storageClassName: {{ .Values.sharedVolume.storageClassName }} # TODO: this could be fixed to 'efs-sc
+  resources:
+    requests:
+      storage: {{ .Values.sharedVolume.size }}
+{{ end }}
